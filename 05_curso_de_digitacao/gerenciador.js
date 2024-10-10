@@ -1,0 +1,92 @@
+const textos = [
+    "Aprender a digitar é essencial. Comece com práticas diárias.",
+    "As crianças correm descalças na areia da praia, enquanto o sol se pôe lentamente no horizonte dourado ao longe.",
+    "Na tranquila tarde de verão, o vento suave balança as árvores, enquanto as flores exalam um doce perfume que enche o ar ao redor do jardim perfumado.",
+    "Sob o céu estrelado da noite, os animais da floresta começam a recolgher em suas tocas, enquanto os grilos cantam sua sinfonia noturna, acompanhados pelo suave murmpurio do riacho que serpenteia entre as pedras.",
+    "No coração da cidade agitada, o trânsito flui incessantemente, enquanto as luzes dos prédios brilham intensamente, refletindo-se nas ágias calmas do ruo que corta a metrópole, criando um cenário urbano de beleza única, onde o caos e a serenidade se econtram harminicamente",
+];
+
+let contadorCerto = 0;
+let contadorErrado = 0;
+let intervaloTempo;
+let tempoRestante = 60;
+let textoAtual = '';
+
+function iniciarContadorTempo() {
+    if (intervaloTempo) clearInterval(intervaloTempo);
+    tempoRestante = 60;
+    document.getElementById('contadorTempo').textContent = tempoRestante;
+    intervaloTempo = setInterval(() => {
+        tempoRestante--;
+        document.getElementById('contadorTempo').textContent = tempoRestante;
+        if (tempoRestante <= 0) {
+            clearInterval(intervaloTempo);
+            verificarResultado();
+        }
+    }, 1000);
+}
+
+function verificarResultado() {
+    const porcentagemCerta = contadorCerto / textoAtual.length;
+    if (porcentagemCerta >= 0.8) {
+        alert('Parabéns! Você foi aprovado.');
+    } else {
+        alert('Tente novamente!');
+    }
+    resetar();
+}
+
+function resetar() {
+    const elementoEntrada = document.getElementById('entrada');
+    elementoEntrada.value = '';
+    elementoEntrada.disabled = true;
+    clearInterval(intervaloTempo);
+
+    document.getElementById('contadorCerto').textContent = '0';
+    document.getElementById('contadorErrado').textContent = '0';
+    document.getElementById('contadorTempo').textContent = '60';
+
+    tempoRestante = 60;
+    contadorCerto = 0;
+    contadorErrado = 0;
+
+    [...document.getElementById('texto').children].forEach(span => {
+        span.classList.remove('certo', 'errado');
+    });
+}
+
+function mudarNivel(nivel) {
+    resetar();
+    textoAtual = textos[nivel - 1];
+
+    const elementoTexto = document.getElementById('texto');
+
+    elementoTexto.innerHTML = textoAtual.split('').map(char => `<span>${char}</span>`).join('');
+    document.getElementById('entrada').disabled = false;
+}
+
+document.getElementById('entrada').addEventListener('input', function() {
+    if (tempoRestante === 60) iniciarContadorTempo();
+
+    const entradaTexto = this.value;
+
+    if (entradaTexto.length > textoAtual.length) {
+        this.value = entradaTexto.substring(0, textoAtual.length);
+        return;
+    }
+
+    contadorCerto = 0;
+    contadorErrado = 0;
+
+    [...document.getElementById('texto').children].forEach((span, index) => {
+        if (index < entradaTexto.length) {
+            if(entradaTexto[index] === span.textContent) {
+                span.classList.add('certo');
+                span.classList.remove('errado');
+                contadorCerto++;
+            }
+        } else {
+            
+        }
+    })
+})
