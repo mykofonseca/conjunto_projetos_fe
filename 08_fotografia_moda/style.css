@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 20px;
+    background-color: #444;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.cabecalho p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.galeria-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.galeria {
+    display: flex;
+    overflow-x: auto;
+    width: 90%;
+    max-width: 1200px;
+    scroll-behavior: smooth;
+}
+
+.galeria-slide {
+    min-width: 200px;
+    margin: 10px;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.imagem-descricao-container {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.imagem-descricao-container img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.imagem-descricao-container p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}

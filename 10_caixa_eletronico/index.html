@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletrônico</title>]
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Caixa Eletrônico</h2>
+        <div id="login-container">
+            <input type="text" id="usuario" placeholder="Usuário">
+            <input type="password" id="senha" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <button onclick="registrar()">Registrar</button>
+        </div>
+        <div id="atm-container" style="display: none;">
+            <h3>Bem vindo, <span id="nome-usuario"></span></h3>
+            <p>Conta: <span id="conta"></span></p>
+            <p>Saldo: R$ <span id="saldo"></span></p>
+            <button onclick="exibirDeposito()">Depositar</button>
+            <button onclick="exibirSaque()">Sacar</button>
+            <button onclick="exibirHistorico()">Histórico de Transações</button>
+            <button onclick="logout()">Sair</button>
+        </div>
+        <div id="deposito-container">
+            <h3>Depósito</h3>
+            <input type="number" id="valor-deposito" placeholder="Valor à depositar">
+            <button onclick="depositar()">Depositar</button>
+            <button onclick="exibirCaixaEletronico()">Cancelar</button>
+        </div>
+        <div id="saque-container" style="display: none;">
+            <h3>Saque</h3>
+            <input type="number" id="valor-saque" placeholder="Valor a sacar">
+            <button onclick="sacar()">Sacar</button>
+            <button onclick="exibirCaixaEletronico()">Cancelar</button>
+        </div>
+        <div id="historico-container">
+            <h3>Histórico de Transações</h3>
+            <textarea id="historico-text" rows="10" cols="40" readonly></textarea>
+            <button onclick="exibirCaixaEletronico()">Cancelar</button>
+        </div>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
