@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagem Detalhada</title>
+    <link rel="stylesheet" type="text/css" href="style-image.css">
+</head>
+<body>
+    <main class="imagem-container">
+        <img id="imagem" src="" alt="Detalhes da imagem selecionada">
+        <figcaption id="descricao"></figcaption>
+    </main>
+
+    <script>
+        function obterParametrosURL() {
+            let parametros = {};
+            let partes = window.location.search.substring(1).split('&');
+            for (let i = 0; i < partes.length; i++) {
+                let par = partes[i].split('=');
+                parametros[decodeURIComponent(par[0])] = decodeURIComponent(par[1]);
+        }
+        return parametros;
+    }
+    
+    let parametros = obterParametrosURL();
+    document.getElementById('imagem').src = parametros.imagem;
+    document.getElementById('descricao').textContent = parametros.descricao;
+    
+    </script>
+</body>
+</html>

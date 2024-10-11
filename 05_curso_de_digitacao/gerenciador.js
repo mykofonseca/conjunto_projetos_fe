@@ -2,8 +2,8 @@ const textos = [
     "Aprender a digitar é essencial. Comece com práticas diárias.",
     "As crianças correm descalças na areia da praia, enquanto o sol se pôe lentamente no horizonte dourado ao longe.",
     "Na tranquila tarde de verão, o vento suave balança as árvores, enquanto as flores exalam um doce perfume que enche o ar ao redor do jardim perfumado.",
-    "Sob o céu estrelado da noite, os animais da floresta começam a recolgher em suas tocas, enquanto os grilos cantam sua sinfonia noturna, acompanhados pelo suave murmpurio do riacho que serpenteia entre as pedras.",
-    "No coração da cidade agitada, o trânsito flui incessantemente, enquanto as luzes dos prédios brilham intensamente, refletindo-se nas ágias calmas do ruo que corta a metrópole, criando um cenário urbano de beleza única, onde o caos e a serenidade se econtram harminicamente",
+    "Sob o céu estrelado da noite, os animais da floresta começam a recolher em suas tocas, enquanto os grilos cantam sua sinfonia noturna, acompanhados pelo suave murmpurio do riacho que serpenteia entre as pedras.",
+    "No coração da cidade agitada, o trânsito flui incessantemente, enquanto as luzes dos prédios brilham intensamente, refletindo-se nas águas calmas do rio que corta a metrópole, criando um cenário urbano de beleza única, onde o caos e a serenidade se econtram harmonicamente",
 ];
 
 let contadorCerto = 0;
@@ -86,7 +86,14 @@ document.getElementById('entrada').addEventListener('input', function() {
                 contadorCerto++;
             }
         } else {
-            
+            span.classList.remove('certo', 'errado');
         }
-    })
-})
+    });
+
+    document.getElementById('contadorCerto').textContent = contadorCerto;
+    document.getElementById('contadorErrado').textContent = contadorErrado;
+
+    if(entradaTexto.length === textoAtual.length) {
+        verificarResultado();
+    }
+});

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Galaria de Imagens 3d</h1>
+    <div class="caixa">
+        <span style="--i:1;">
+            <img src="./p07_imagens/carro1.jpg" alt="Carro 1" onclick="abrirImagem('./p07_imagens/carro1.jpg', 'Este é um carro esportivo, conhecido por sua velocidade e design aerodinâmico.')">
+            <p>Carro Esportivo</p>
+        </span>
+        <span style="--i:2;">
+            <img src="./p07_imagens/carro2.jpg" alt="Carro 2" onclick="abrirImagem('./p07_imagens/carro2.jpg', 'Este é um carro SUV, popular por seu espaço interno e capacidade off-road.')">
+            <p>SUV</p>
+        </span>
+        <span style="--i:3;">
+            <img src="./p07_imagens/carro3.jpg" alt="Carro 3" onclick="abrirImagem('./p07_imagens/carro3.jpg', 'Este é um carro sedã, conhecido por seu conforto e elegância.')">
+            <p>Sedã</p>
+        </span>
+        <span style="--i:4;">
+            <img src="./p07_imagens/carro4.jpg" alt="Carro 4" onclick="abrirImagem('./p07_imagens/carro4.jpg', 'Este é um carro hatchback, apreciado por sua praticidade e eficiência de combustível.')">
+            <p>Hatchback</p>
+        </span>
+        <span style="--i:5;">
+            <img src="./p07_imagens/carro5.jpg" alt="Carro 5" onclick="abrirImagem('./p07_imagens/carro5.jpg', 'Este é um carro conversível, ideal para dirigir com a capota aberta em dias ensolarados.')">
+            <p>Conversível</p>
+        </span>
+        <span style="--i:6;">
+            <img src="./p07_imagens/carro6.jpg" alt="Carro 6" onclick="abrirImagem('./p07_imagens/carro6.jpg', 'Este é um carro elétrico, conhecido por sua eficiência energética e baixa emissão de poluentes.')">
+            <p>Carro Elétrico</p>
+        </span>
+        <span style="--i:7;">
+            <img src="./p07_imagens/carro7.jpg" alt="Carro 7"  onclick="abrirImagem('./p07_imagens/carro7.jpg', 'Este é um carro híbrido, que combina motor a combustão e eletrico para melhor eficiência de combustível.')">
+            <p>Caro Híbrido</p>
+        </span>
+        <span style="--i:8;">
+            <img src="./p07_imagens/carro8.jpg" alt="Carro 8"  onclick="abrirImagem('./p07_imagens/carro8.jpg', 'Este é um carro de luxo, oferecendo o máximo em conforto e tecnologia avançada.')">
+            <p>Carro de Luxo</p>
+        </span>
+        <span style="--i:9;">
+            <img src="./p07_imagens/carro9.jpg" alt="Carro 9"  onclick="abrirImagem('./p07_imagens/carro9.jpg', 'Este é um carro esportivo, utilitário, combinando características de esportividade e capacidade de SUV.')">
+            <p>Esportivo Utilitário</p>
+        </span>
+        <span style="--i:10;">
+            <img src="./p07_imagens/carro10.jpg" alt="Carro 10"  onclick="abrirImagem('./p07_imagens/carro10.jpg', 'Este é um carro compacto, ideal para condução urbana e de fácil estacionamento.')">
+            <p>Carro Compacto</p>
+        </span>
+        <span style="--i:11;">
+            <img src="./p07_imagens/carro11.jpg" alt="Carro 11"  onclick="abrirImagem('./p07_imagens/carro11.jpg', 'Este é um carro pickup, conhecido por sua capacidade de carga e durabilidade.')">
+            <p>Pickup</p>
+        </span>
+        <span style="--i:12;">
+            <img src="./p07_imagens/carro12.jpg" alt="Carro 12" onclick="abrirImagem('./p07_imagens/carro12.jpg', 'Este é um carro familiar, projetado para oferecer segurança e espaço para toda a familia.')">
+            <p>Carro Familiar</p>
+        </span>
+    </div>
+    <script>
+        
+        function abrirImagem(imagem, descricao) {
+            let url = `imagem.html?imagem=${imagem}&descricao=${encodeURIComponent(descricao)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
