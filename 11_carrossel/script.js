@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if(index === indiceAtual) {
                 slide.classList.add('active');
-            } else if (index === 0 ? slides.length - 1 : indiceAtual -1) {
+            } else if (index === (indiceAtual === 0 ? slides.length -1 : indiceAtual - 1 ))  {
                 slide.classList.add('prev');
             } else if (index === (indiceAtual === slides.length - 1 ? 0 : indiceAtual + 1)) {
                 slide.classList.add('next');
@@ -42,4 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     atualizarSlides();
     iniciarAutoPlay();
-})
+});

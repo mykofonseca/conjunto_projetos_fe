@@ -54,7 +54,7 @@ h1 {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 p4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .slide .info {
@@ -73,6 +73,11 @@ h1 {
 }
 
 .slide.prev {
+    transform: translateX(-150%) translateZ(100px);
+    opacity: var(--prev-next-opacity);
+}
+
+.slide.next {
     transform: translateX(50%) translateZ(100px);
     opacity: var(--prev-next-opacity);
 }
