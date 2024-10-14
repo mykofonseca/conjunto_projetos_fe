@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Puzzle de Números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jogo de Puzzle de Números</h1>
+    <div id="interface">
+        <div id="pontuacao">Pontos: 0</div>
+        <div id="controles">
+            <label for="tamanhho-tabuleiro">Escolha o tamanho do tabuleiro:</label>
+            <select id="tamanhho-tabuleiro">
+                <option value="3">3 x 3</option>
+                <option value="4">4 x 4</option>
+                <option value="5">5 x 5</option>
+                <option value="6">6 x 6</option>
+            </select>
+            <button id="botao-testar">Testar</button>
+        </div>
+    </div>
+    <div id="container-puzzle"></div>
+    <div id="modal-vitoria" class="modal">
+        <div class="conteudo-modal">
+            <span id="fechar-modal" class="fechar">&times;</span>
+            <p>Parabéns! Você completou o jogo!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

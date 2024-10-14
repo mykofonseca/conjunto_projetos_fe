@@ -1,0 +1,40 @@
+body { 
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+.container-faq {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.item-faq {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.item-faq:hover {
+    background-color: #e8de82;
+}
+
+.pergunta {
+    margin: 0;
+}
+
+.resposta {
+    display: none;
+    margin-top: 10px;
+}
+
+.escondido {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
