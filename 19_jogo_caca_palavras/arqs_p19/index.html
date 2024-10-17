@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Caça-Palavras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Caça-Palavras</h1>
+    <div id="container">
+        <div id="caça-palavras"></div>
+        <div id="informacoes">
+            <div id="palavras">
+                <h2>Palavras a encontrar:</h2>
+                <ul id="lista-palavras"></ul>
+                <button id="botao-dica"></button>
+            </div>
+            <div id="pontuacao">
+                <h2>Pontuação: <span id="valor-pontuacao">0</span></h2>
+            </div>
+        </div>
+    </div>
+    <div id="mensagem">
+        <h2>Parabéns!</h2>
+        <p>Você encontrou todas as palavras!</p>
+        <button onclick="continuar()">Continuar</button>
+    </div>
+    <div id="modal-dica" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h2>Imagem do Caça-Palavras</h2>
+            <div id="caça-palavras-dica"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
