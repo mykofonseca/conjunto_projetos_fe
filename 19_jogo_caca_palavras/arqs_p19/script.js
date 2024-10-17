@@ -103,6 +103,8 @@ const iniciarFase = () => {
     listaPalavras.innerHTML = '';
     palavras.forEach(palavra => {
         const li = document.createElement('li');
+        li.textContent = palavra;
+        listaPalavras.appendChild(li);
     });
     criarGrid(grid);
     colocarPalavras(grid);
@@ -155,7 +157,7 @@ const selecionarPalavra = (inicio, fim) => {
     if(linhaInicial === linhaFinal) {
         direcao = colunaInicial < colunaFinal ? 2 : 6;
     } else if (colunaInicial === colunaFinal) {
-        direcao = linhaFinal < linhaFinal ? 4 : 0;
+        direcao = linhaInicial < linhaFinal ? 4 : 0;
     } else if (linhaInicial < linhaFinal && colunaInicial < colunaFinal) {
         direcao = 3;
     } else if (linhaInicial < linhaFinal && colunaInicial > colunaFinal) {
@@ -197,4 +199,53 @@ const verificarConclusao = () => {
     }
 };
 
-// linha 797, página 117
+const riscarPalavra= (palavra) => {
+    const itens = listaPalavras.querySelectorAll('li');
+    itens.forEach(item => {
+        if(item.textContent === palavra) {
+            item.style.textDecoration = 'line-through';
+        }
+    });
+};
+
+const continuar = () => {
+    faseAtual++;
+    if(faseAtual >= totalFases) {
+        alert('Parabéns! Você completou todas as fases!');
+        faseAtual = 0;
+        pontos = 0;
+        localStorage.removeItem('cacaPalavrasPontos');
+        localStorage.removeItem('cacaPalavrasFase');
+    }
+    mensagem.style.display = 'none';
+    iniciarFase();
+};
+
+const verificarPalavraValida = (palavra) => {
+    const texto = palavra.map(celula => celula.dataset.letra).join('');
+    return palavras.includes(texto);
+};
+
+const aoPressionarMouse = (e) => {
+    selecionando = true;
+    celulaInicial = e.target;
+};
+
+const aoSoltarMouse = (e) => {
+    if(selecionando) {
+        celulaFinal = e.target;
+        selecionarPalavra(celulaInicial, celulaFinal);
+    }
+
+    selecionando = false;
+    celulaInicial = null;
+    celulaFinal = null;
+};
+
+grid.addEventListener('mousedown', aoPressionarMouse);
+grid.addEventListener('mouseup', aoSoltarMouse);
+window.onclick = (event) => {
+    if(event.target === modalDica) {
+        modalDica.style.display = 'none';
+    }
+};
