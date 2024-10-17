@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for(let i = 1; i <= tamanho * tamanho; i++) {
             const peca = document.createElement('div')
-            peca.classList('peca');
+            peca.classList.add('peca');
             if(i === tamanho * tamanho) {
                 peca.id = 'peca-vazia';
             } else {
