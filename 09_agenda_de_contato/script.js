@@ -65,13 +65,13 @@ function editarContato(id) {
 
         excluirContato(id);
     }
+}
 
-    function excluirContato(id) {
-        let contatos = obterContatos();
-        contatos = contatos.filter(contato => contato.id !== id);
-        salvarContatos(contatos);
-        renderizarContatos();
-    }
+function excluirContato(id) {
+    let contatos = obterContatos();
+    contatos = contatos.filter(contato => contato.id !== id);
+    salvarContatos(contatos);
+    renderizarContatos();
 }
 
 function filtrarContatos() {

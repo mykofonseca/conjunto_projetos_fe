@@ -9,11 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fecharModal = document.getElementById('fechar-modal');
     const pontuacao = document.getElementById('pontuacao')
 
-    let pontos = localStorage.getItem('pontos_puzzle') ? parseInt(localStorage.getItem('pontos_puzzle')) : 0;
+    let pontos = localStorage.getItem('pontos_puzzle') ? parseInt(localStorage.getItem('pontos_puzzle')) : 
+    0;
     let ordemPecas;
     let tamanhoAtual = 3;
 
-    pontuacao.innerText = `Pontos: ${pontos}`
+    pontuacao.innerText = `Pontos: ${pontos}`;
 
     fecharModal.onclick = () => {
         modalVitoria.style.display = "none";
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 peca.id = 'peca-vazia';
             } else {
                 peca.id = `peca-${i}`;
-                peca.innerHTML = i;
+                peca.innerText = i;
             }
             containerPuzzle.appendChild(peca);
         }
@@ -95,13 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizar() {
         const pecas = Array.from(document.querySelectorAll('.peca'));
         ordemPecas.forEach((valor, index) => {
-            if(valor !== null) {
+            if (valor !== null) {
                 pecas[valor - 1].style.order = index;
-                pecas[valor - 1].style.backgroundColor = "#ffdab9";
+                pecas[valor - 1].style.backgroundColor = '#ffdab9';
             } else {
                 const pecaVazia = document.getElementById('peca-vazia');
                 pecaVazia.style.order = index;
-                pecaVazia.style.backgroundColor = "#8b5a2b";
+                pecaVazia.style.backgroundColor = '#8b5a2b';
             }
         });
         verificarVitoria();
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(ordemPecas.every((val, index) => val === ordemCorreta[index])) {
             pontos += 10;
             localStorage.setItem('pontos_puzzle', pontos);
-            pontuacao.innerHTML = `Pontos: ${pontos}`;
+            pontuacao.innerText = `Pontos: ${pontos}`;
             modalVitoria.style.display = "flex";
         }
     }
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const indexPeca = ordemPecas.indexOf(parseInt(event.target.innerText));
             const indexVazio = ordemPecas.indexOf(null);
             if(jogadaValida(indexPeca, indexVazio)) {
-                [ordemPecas[indexPeca], ordemPecas[indexVazio]] == [ordemPecas[indexVazio], ordemPecas[indexPeca]];
+                [ordemPecas[indexPeca], ordemPecas[indexVazio]] = [ordemPecas[indexVazio], ordemPecas[indexPeca]];
                 renderizar();
             }
         }
