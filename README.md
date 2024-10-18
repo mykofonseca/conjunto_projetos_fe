@@ -14,16 +14,16 @@ Projeto 11 - Carrossel de Imagens  <br>
 Projeto 12 - Carrossel 3D de Imagens  <br>
 Projeto 13 - Tradutor de Textos  <br>
 Projeto 14 - Páginas de Perguntas Frequentes (FAQs)  <br>
-Projeto 15 - Jogo Puzzle Números
-Projeto 16 - 
-Projeto 17 - 
-Projeto 18 -  
-Projeto 19 -
-Projeto 20 - Carregar Tabela Excel com Filtro de Pesquisa
-Projeto 21 - Funcionários Abas por Departamento
-Projeto 22 - Gestão de Notas de Alunos
-Projeto 23 - Tabela com Filtros de Seleção (Dropdown)
-Projeto 24 - Lista de Produtos com Imagens
-Projeto 25 - Jogo da memória
-Projeto 26 - Dashboard de Vendas
-Projeto 27 - Gráfico de Pizza com  Dados de Excel
+Projeto 15 - Jogo Puzzle Números <br>
+Projeto 16 - <br>
+Projeto 17 - <br>
+Projeto 18 - <br>
+Projeto 19 - <br>
+Projeto 20 - Carregar Tabela Excel com Filtro de Pesquisa <br>
+Projeto 21 - Funcionários Abas por Departamento <br>
+Projeto 22 - Gestão de Notas de Alunos <br>
+Projeto 23 - Tabela com Filtros de Seleção (Dropdown) <br>
+Projeto 24 - Lista de Produtos com Imagens <br>
+Projeto 25 - Jogo da memória <br>
+Projeto 26 - Dashboard de Vendas <br>
+Projeto 27 - Gráfico de Pizza com  Dados de Excel <br>
