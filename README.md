@@ -15,10 +15,10 @@ Projeto 12 - Carrossel 3D de Imagens  <br>
 Projeto 13 - Tradutor de Textos  <br>
 Projeto 14 - Páginas de Perguntas Frequentes (FAQs)  <br>
 Projeto 15 - Jogo Puzzle Números <br>
-Projeto 16 - <br>
-Projeto 17 - <br>
-Projeto 18 - <br>
-Projeto 19 - <br>
+Projeto 16 - Visualizador de Imagens <br>
+Projeto 17 - Calculadora <br>
+Projeto 18 - Efeitos de Animação <br>
+Projeto 19 - Jogo Caça-Palavras <br>
 Projeto 20 - Carregar Tabela Excel com Filtro de Pesquisa <br>
 Projeto 21 - Funcionários Abas por Departamento <br>
 Projeto 22 - Gestão de Notas de Alunos <br>
