@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionários por Departamento</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Funcionários por Departamento</h1>
+        <div id="indicador-carregamento" class="text-center mt-4">Carregamento...</div>
+        <div id="conteudo" style="display: none;">
+            <input type="text" id="campo-pesquisa" class="form-control mt-3" placeholder="Pesquisar por nome...">
+            <div class="d-flex justify-content-between mt-3">
+                <button id="exportar-selecionado" class="btn btn-primary">Exportar Dados da Aba Selecionada</button>
+                <button id="exportar-todos" class="btn btn-secondary">Exportar Todos os Dados</button>
+            </div>
+            <div id="container-abas" class="mt-4"></div>
+            <div id="container-dados" class="mt-4"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

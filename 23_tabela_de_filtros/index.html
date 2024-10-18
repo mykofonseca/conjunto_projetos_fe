@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com Filtros de Seleção (Dropdown)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tabela com Filtros de Seleção (Dropdown)</h1>
+    <button onclick="exportarParaExcel()">Exportar para Excel</button>
+    <div id="info">
+        <p>Total de Linhas: <span id="contadorLinhas">0</span></p>
+        <p>Somatória de Salários: <span id="somaSalarios">R$ 0,00</span></p>
+    </div>
+    <table id="tabelaFuncionarios">
+        <thead>
+            <tr>
+                <th>Nome
+                    <select id="filtroNome" onchange="filtrarTabela()">
+                        <option value="">Todos</option>
+                    </select>
+                </th>
+                <th>Departamento
+                    <select id="filtroDepartamento" onchange="filtrarTabela()">
+                        <option value="">Todos</option>
+                    </select>
+                </th>
+                <th>Cargo
+                    <select id="filtroCargo" onchange="filtrarTabela()">
+                        <option value="">Todos</option>
+                    </select>
+                </th>
+                <th>Salário
+                    <select id="filtroSalario" onchange="filtrarTabela()">
+                        <option value="">Todos</option>
+                    </select>
+                <th>Tempo de Empresa (anos)
+                    <select id="filtroTempo" onchange="filtrarTabela()">
+                        <option value="">Todos</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
