@@ -33,10 +33,12 @@ h1 {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.lista-produtos select, .lista-produtos input {
+.lista-produtos select, 
+.lista-produtos input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 

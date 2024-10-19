@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const listaProdutos = document.getElementById('lista-produtos');
     const detalhesProdutos = document.getElementById('detalhes-produto');
-    const filtroProduto = document.getElementById('filtro-produtos');
+    const filtroProduto = document.getElementById('filtro-produto');
     const filtroVendedor = document.getElementById('filtro-vendedor');
     const mostrarTodosBtn = document.getElementById('mostrar-todos');
     const totalVendas = document.getElementById('total-vendas');
