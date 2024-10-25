@@ -27,7 +27,7 @@ Projeto 24 - Lista de Produtos com Imagens <br>
 Projeto 25 - Jogo da memória <br>
 Projeto 26 - Dashboard de Vendas <br>
 Projeto 27 - Gráfico de Pizza com  Dados de Excel <br>
-Projet 28 - Supermercado <br>
+Projeto 28 - Supermercado <br>
 Projeto 29 - Jogo da Velha <br>
 Projeto 30 - Jogo da Forca <br>
 Projeto 31 - Gráfico de Rosca com  Dados de Excel <br>
