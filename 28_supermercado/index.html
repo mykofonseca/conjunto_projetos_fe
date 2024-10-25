@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-sucess text-white text-center p-3 mb-3">
+        <h1>Supermercado Online</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar bg-azul-escuro">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <button class="nav-link active btn btn-link text-branco" id="limpar-filtro" style="font-size: 26px;">
+                                Mostrar Todos
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link text-branco categoria" data-categoria="Alimentos" style="font-size: 24px;">
+                                Alimentos
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link text-branco categoria" data-categoria="Bebidas" style="font-size: 24px;">
+                                Bebidas
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link text-branco categoria" data-categoria="Laticínios" style="font-size: 24px;">
+                                Laticínios
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link text-branco categoria" data-categoria="Produtos de Limpeza" style="font-size: 24px;">
+                                Produtos de Limpeza
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link btn btn-link text-branco categoria" data-categoria="Snacks" style="font-size: 24px;">
+                                Snacks
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Pesquisar produto..." id="campo-pesquisa" style="font-size: 24px;">
+                            <button class="btn btn-outline-secondary" type="button" id="botao-pesquisar" style="font-size: 24px;">Pesquisar</button>
+                        </div>
+                    </div>
+                    <div class="col text-end">
+                        <button class="btn btn-info" id="botao-ver-carrinho" data-bs-toggle="modal" data-bs-target="#modalCarrinho" style="font-size: 24px;">
+                            Ver Carrinho (<span id="contador-carrinho">0</span> itens)
+                        </button>
+                    </div>
+                </div>
+                <div id="secoes-produtos"></div>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCarrinho" tabindex="-1" aria-labelledby="labelModalCarrinho" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="labelModalCarrinho">Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="lista-itens-carrinho" class="list-group"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-labelledby="labelModalCarrinho" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="labelModalCarrinho">Detalhes do Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img id="imagem-produto" class="img-fluid mb-3" src="" alt="">
+                    </div>
+                    <h5 id="nome-produto"></h5>
+                    <p id="descricao-produto"></p>
+                    <p><strong>Preço: R$ <span id="preco-produto"></span></strong></p>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="quantidade-produto" >Quantidade</label>
+                        <input type="number" class="form-control" id="quantidade-produto" value="1" min="1">
+                    </div>
+                    <button class="btn btn-primary" id="botao-adicionar-carrinho-modal" data-produto-id="">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
