@@ -9,6 +9,10 @@
     background: #fff;
 }
 
+.bg-sucess {
+    background-color: green;
+}
+
 .item-carrinho {
     display: flex;
     align-items: center;

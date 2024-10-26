@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const quantidadeProduto = document.getElementById('quantidade-produto');
     const botaoAdicionarCarrinhoModal = document.getElementById('botao-adicionar-carrinho-modal');
 
-    const bototesCategoria = document.querySelectorAll('.categoria');
+    const botoesCategoria = document.querySelectorAll('.categoria');
     const modalProduto = new bootstrap.Modal(document.getElementById('modalProduto'));
     
     function atualizarExibicaoProdutos(categoriasFiltradas) {
@@ -62,10 +62,161 @@ document.addEventListener("DOMContentLoaded", function() {
                     let cartao = document.createElement('div');
                     cartao.className = 'card';
 
-                    cartao.innerHTML = ``
-                    // linha 201
-                })
+                    cartao.innerHTML = `
+                    <img src="${produto.imageUrl}" class="bg-imagem-topo" alt="${produto.nome}"
+                    data-bs-toggle="modal" data-bs-target="#modalProduto" data-produto-id="${produto.id}">
+                        <div class="card-body">
+                            <h5 class="card-title">${produto.nome}</h5>
+                            <p class="card-text">${produto.descricao}</p>
+                            <p class="card-text"><strong>Preço: R$ ${produto.preco}</strong></p>
+                            <button class="btn btn-primary adicionar-ao-carrinho" data-produto-id="${produto.id}"
+                            >Adicionar ao carrinho</button>
+                        </div>
+                    `;
+
+                    coluna.appendChild(cartao);
+                    linha.appendChild(coluna);
+                });
+                secao.appendChild(linha);
+                secoesProdutos.appendChild(secao);
             }
-        })
+        });
+
+        document.querySelectorAll('.adicionar-ao-carrinho').forEach(botao => {
+            botao.addEventListener('click', function() {
+                const idProduto = parseInt(this.getAttribute('data-produto-id'));
+                adicionarAoCarrinho(idProduto);
+            });
+        });
+
+        document.querySelectorAll('.bg-imagem-topo').forEach(imagem => {
+            imagem.addEventListener('click', function() {
+                const idProduto = parseInt(this.getAttribute('data-produto-id'));
+                const produto = obterProdutoPorId(idProduto);
+                if(produto) {
+                    imagemProduto.src = produto.imageUrl;
+                    nomeProduto.textContent = produto.nome;
+                    descricaoProduto.textContent = produto.descricao;
+                    precoProduto.textContent = produto.preco;
+                    botaoAdicionarCarrinhoModal.setAttribute('data-produto-id', produto.id);
+                    quantidadeProduto.value = 1;
+                    modalProduto.show();
+                }
+            });
+        });
     }
-})
+
+    function adicionarAoCarrinho(idProduto, quantidade = 1) {
+        const produto = obterProdutoPorId(idProduto);
+        if(!produto) return;
+
+        const produtoExistente = carrinho.find(item => item.id === produto.id);
+        if(produtoExistente) {
+            produtoExistente.quantidade += quantidade;
+        } else {
+            carrinho.push({ ...produto, quantidade: quantidade});
+        }
+        atualizarContadorCarrinho();
+    }
+
+    function obterProdutoPorId(id) {
+        for(let categoria in categorias) {
+            const produto = categorias[categoria].find(item => item.id === id);
+            if(produto) return produto;
+        }
+        return null;
+    }
+
+    function exibirCarrinho() {
+        listaItensCarrinho.innerHTML = '';
+        if(carrinho.length === 0) {
+            let mensagemVazia = document.createElement('li')
+            mensagemVazia.textContent = 'Seu carrinho está vazio.';
+            mensagemVazia.className = 'list-group-item';
+            listaItensCarrinho.appendChild(mensagemVazia);
+        } else {
+            carrinho.forEach(item => {
+                let itemLista = document.createElement('li');
+                itemLista.className = 'list-group-item d-flex justify-content-between align-items-center';
+                itemLista.innerHTML = `
+                <div class="item-carrinho">
+                    <img src="${item.imageUrl}" alt="${item.nome}" class="imagem-item-carrinho">
+                    <div class="detalhes-item-carrinho">
+                        <span>${item.nome}</span>
+                        <span>R$ ${item.preco}</span>
+                        <span>Quantidade: ${item.quantidade}</span>
+                    </div>
+                </div>
+                <button class="btn btn-danger btn-sm remover-do-carrinho" data-produto-id="${item.id}">Remover</button>
+                `;
+                listaItensCarrinho.appendChild(itemLista);
+            });
+
+            let itemTotal = document.createElement('li');
+            itemTotal.className = 'list-group-item list-group-item-dark';
+            let total = carrinho.reduce((acc, item) => acc + (parseFloat(item.preco.replace(',', '.')) * item.quantidade), 0);
+            itemTotal.textContent = `Total R$ ${total.toFixed(2)}`;
+            listaItensCarrinho.appendChild(itemTotal);
+        }
+        
+        document.querySelectorAll('.remover-do-carrinho').forEach(botao => {
+            botao.addEventListener('click', function() {
+                const idProduto = parseInt(this.getAttribute('data-produto-id'));
+                removerDoCarrinho(idProduto);
+            });
+        });
+
+        let modalCarrinho = new bootstrap.Modal(document.getElementById('modalCarrinho'), {});
+        modalCarrinho.show();
+        modalCarrinho._element.addEventListener('hidden.bs.modal', function() {
+            window.location.href = "index.html";
+        });
+    }
+
+    function removerDoCarrinho(idProduto) {
+        carrinho = carrinho.filter(item => item.id !== idProduto);
+        atualizarContadorCarrinho();
+        exibirCarrinho();
+    }
+
+    function atualizarContadorCarrinho() {
+        contadorCarrinho.textContent = `${carrinho.length}`;
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+
+    botaoAdicionarCarrinhoModal.addEventListener('click', function() {
+        const idProduto = parseInt(this.getAttribute('data-produto-id'));
+        const quantidade = parseInt(quantidadeProduto.value);
+        adicionarAoCarrinho(idProduto, quantidade);
+        modalProduto.hide();
+    });
+
+    botaoPesquisar.addEventListener('click', function() {
+        const termoPesquisa = campoPesquisa.value.toLowerCase();
+        const categoriasFiltradas = {};
+        Object.keys(categorias).forEach(categoria => {
+            categoriasFiltradas[categoria] = categorias[categoria].filter(produto => {
+                return produto.nome.toLowerCase().includes(termoPesquisa);
+            });
+        });
+
+        atualizarExibicaoProdutos(categoriasFiltradas);
+    });
+
+    botoesCategoria.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const categoria = this.getAttribute('data-categoria');
+            const categoriasFiltradas = {};
+            categoriasFiltradas[categoria] = categorias[categoria];
+            atualizarExibicaoProdutos(categoriasFiltradas);
+        });
+    });
+
+    botaoLimparFiltro.addEventListener('click', function() {
+        atualizarExibicaoProdutos(categorias);
+    });
+
+    atualizarExibicaoProdutos(categorias);
+    botaoVerCarrinho.addEventListener('click', exibirCarrinho);
+    atualizarContadorCarrinho();
+});
