@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Jogo da Velha</h1>
+    <div id="pontuacoes">
+        Jogador:
+        <span id="pontuacao-jogador">0</span>
+        |
+        Computador:
+        <span id="pontuacao-computador">0</span>
+        |
+        Empates:
+        <span id="pontuacao-empates">0</span>
+    </div>
+    <div class="tabuleiro" id="tabuleiro">
+        <div class="celula" onclick="fazerJogada(0)"></div>
+        <div class="celula" onclick="fazerJogada(1)"></div>
+        <div class="celula" onclick="fazerJogada(2)"></div>
+        <br>
+        <div class="celula" onclick="fazerJogada(3)"></div>
+        <div class="celula" onclick="fazerJogada(4)"></div>
+        <div class="celula" onclick="fazerJogada(5)"></div>
+        <br>
+        <div class="celula" onclick="fazerJogada(6)"></div>
+        <div class="celula" onclick="fazerJogada(7)"></div>
+        <div class="celula" onclick="fazerJogada(8)"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

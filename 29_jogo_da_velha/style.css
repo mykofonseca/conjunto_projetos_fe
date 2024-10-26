@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tabuleiro {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.celula {
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.celula:hover {
+    background-color: #1a1da7;
+    color: #ccc;
+}
+
+#pontuacoes {
+    margin-top: 20px;
+    font-weight: bold;
+}
