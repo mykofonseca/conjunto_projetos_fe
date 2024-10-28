@@ -1,0 +1,144 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #333;
+}
+
+.pontuacao {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.forca-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#forca {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+
+.parte {
+    display: none;
+    position: absolute;
+    background-color: black;
+}
+
+#corda {
+    width: 2px;
+    height: 40px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: brown;
+}
+
+#cabeca {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#corpo {
+    width: 10px;
+    height: 60px;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#bracoEsquerdo {
+    width: 10px;
+    height: 50px;
+    top: 70px;
+    left: calc(50% - 25px);
+    transform: rotate(-45deg);
+}
+
+#bracoDireito {
+    width: 10px;
+    height: 50px;
+    top: 70px;
+    left: calc(50%  + 15px);
+    transform: rotate(45deg);
+}
+
+#pernaEsquerda {
+    width: 10px;
+    height: 50px;
+    top: 123px;
+    left: calc(50% - 20px);
+    transform: rotate(45deg);
+}
+
+#pernaDireita {
+    width: 10px;
+    height: 50px;
+    top: 123px;
+    left: calc(50% + 10px);
+    transform: rotate(-45deg);
+}
+
+#palavraSecreta {
+    font-size: 24px;
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#alfabeto button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#alfabeto button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-reiniciar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#mensagemFinal {
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+}
+
