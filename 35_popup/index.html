@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Pop-ups</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Exemplos de Pop-ups</h1>
+    <div class="botoes">
+        <button id="botaoModal">Abrir Modal Pop-up</button>
+        <button id="botaoAlerta">Mostrar Alerta</button>
+        <button id="botaoTooltip" class="tooltip">Mostrar Tooltip<span class="tooltipTexto">Texto do Tooltip</span></button>
+        <button id="botaoNotificacao">Mostrar Notificação</button>
+        <button id="botaoLightbox">Abrir Lightbox</button>
+        <button id="botaoMenuContexto">Mostrar Menu de Contexto</button>
+        <button id="botaoConfirmacao">Mostrar Confirmação</button>
+        <button id="botaoEntradaTexto">Mostrar Entrada de Texto</button>
+    </div>
+    <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <p>Este é um modal de pop-up!</p>
+        </div>
+    </div>
+    <div id="notificacao" class="notificacao">
+        <span class="botaoFechar" onclick="this.parentElement.style.display='none';">&times;</span>
+        Esta é uma Notificação
+    </div>
+    <div id="lightbox" class="lightbox">
+        <span class="fechar">&times;</span>
+        <img class="lightbox-conteudo" id="imagemLightBox">
+        <div id="legenda"></div>
+    </div>
+    <img src="img.jpg" id="imagem" style="display:none;" onclick="abrirLightbox(this);" alt="Exemplo de imagem">
+    <div id="menuContexto" class="menu-contexto">
+        <ul>
+            <li onclick="acao1()">Ação 1</li>
+            <li onclick="acao2()">Ação 2</li>
+            <li onclick="acao3()">Ação 3</li>
+        </ul>
+    </div>
+    <div id="confirmacao" class="confirmacao">
+        <div class="confirmacao-conteudo">
+            <span class="fechar">&times;</span>
+            <p>Você tem certeza?</p>
+            <button id="botaoSim">Sim</button>
+            <button id="botaoNao">Não</button>
+        </div>
+    </div>
+    <div id="entradaTexto" class="entrada-texto">
+        <div class="entrada-texto-conteudo">
+            <span class="fechar">&times;</span>
+            <p>Digite algo:</p>
+            <input type="text" id="textoEntrada">
+            <button id="botaoEnviar">Enviar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
