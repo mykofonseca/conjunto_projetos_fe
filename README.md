@@ -32,11 +32,11 @@ Projeto 29 - Jogo da Velha <br>
 Projeto 30 - Jogo da Forca <br>
 Projeto 31 - Gráfico de Rosca com  Dados de Excel <br>
 Projeto 32 - Gráfico de Progresso com Figura <br>
-Projeto 33 - Quiz
-Projeto 34 - Valor por Extenso
-Projeto 35 - Pop-Up
-Projeto 36 - Scroller de Texto
-Projeto 37 - Temporizador
-Projeto 38 - Projeto com Tooltip
-Projeto 39 - Jogo Tetris
-Projeto 40 - Jogo Space Invaders
+Projeto 33 - Quiz <br>
+Projeto 34 - Valor por Extenso <br>
+Projeto 35 - Pop-Up <br>
+Projeto 36 - Scroller de Texto <br>
+Projeto 37 - Temporizador <br>
+Projeto 38 - Projeto com Tooltip <br>
+Projeto 39 - Jogo Tetris <br>
+Projeto 40 - Jogo Space Invaders <br>
