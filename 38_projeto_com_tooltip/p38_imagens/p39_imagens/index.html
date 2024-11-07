@@ -1,1 +1,31 @@
-<!-- slide 185 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Vendedoras</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>Dados dos Vendedores</h1>
+    <div class="filtros">
+        <input type="text" id="filtro-vendedor" placeholder="Filtrar por Vendedor">
+        <input type="text" id="filtro-produto" placeholder="Filtrar por Produto">
+        <input type="text" id="filtro-preco" placeholder="Filtrar por Preço">
+    </div>
+    <table id="tabela-vendedores">
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Vendedor</th>
+                <th>Produto</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="script.js"></script>
+</body>
+</html>

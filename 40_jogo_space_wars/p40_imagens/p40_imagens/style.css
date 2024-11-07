@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+}
+
+#containerJogo {
+    text-align: center;
+    position: relative;
+}
+
+#tituloJogo {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 6em;
+    margin-bottom: 10px;
+}
+
+#pontuacao {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#vidas {
+    font-size: 16px;
+    color: #fff;
+}
+
+canvas {
+    border: 2px solid #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 40%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    text-align: center;
+}
+
+.botao {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
