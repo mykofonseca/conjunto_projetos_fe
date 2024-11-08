@@ -1,0 +1,172 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #8ee2d1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#pontuacao {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #555;
+}
+
+#palavra {
+    font-size: 5.5em;
+    margin-top: 20px;
+    color: #0a3766;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#resultado {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #333;
+    min-height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#resultado {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #333;
+    min-height: 40px;
+}
+
+.tecla {
+    margin: 5px;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tecla:hover {
+    background-color: #078b23;
+    transform: scale(1.05);
+}
+
+#btn-verificar, #btn-dica {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#btn-verificar {
+    background-color: #28a745;
+}
+
+#btn-verificar:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+#btn-dica {
+    background-color: #ffc107;
+}
+
+#btn-dica:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 4.2em;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 60px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    #palavra {
+        font-size: 2em;
+    }
+    .tecla {
+        font-size: 1em;
+        padding: 10px;
+    }
+    #btn-verificar, #btn-dica {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    #resultado {
+        font-size: 1.2em;
+    }
+}
+
