@@ -23,4 +23,4 @@ document.getElementById('botaoBaixar').addEventListener('click', function() {
     link.href = contenedorQrCode.toDataURL("image/png");
     link.download = 'qrcode.png';
     link.click();
-})
+});
