@@ -348,3 +348,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 loopJogo();
+
+// a ativação do boss final não está funcionando de forma correta.
