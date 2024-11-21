@@ -232,7 +232,7 @@ imagemChefe.src = 'chefe.png';
 
 const jogador = new Jogador(telaJogo.width / 2 - 15, telaJogo.height - 30, 30, 10, imagemJogador);
 const balasJogador = [];
-const gradeInimigos = new GradeInimigos(2, 2, 10, 30, 20);
+const gradeInimigos = new GradeInimigos(10, 12, 10, 30, 20);
 const balasInimigas = [];
 let chefe = null;
 
